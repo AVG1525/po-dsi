@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Teste</title>
+        <link rel="stylesheet" href="css/site.css" />
+    </head>
+    <body>
+        <h1>Cadastro de games e jogadores</h1>
+        <h3>Add Game</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="addGame()">
+            <input type="text" id="add-name" placeholder="Nome do Game">
+            <input type="text" id="add-sinopse" placeholder="Sinopse do Game">
+            <input type="text" id="add-plataforma" placeholder="Plataforma do Game">
+            <input type="text" id="add-anolancamento" placeholder="Ano de Lançamento">
+            <input type="submit" value="Add Game">
+        </form>
+
+        <h3>Add Jogador</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="addJogador()">
+            <input type="text" id="add-nome-jogador" placeholder="Nome do Jogador">
+            <input type="text" id="add-idade-jogador" placeholder="Idade do Jogador">
+            <input type="text" id="add-nome-usuario" placeholder="Nome de Usuário no Game">
+            <input type="text" id="add-nome-game" placeholder="Nome do Game">
+            <input type="submit" value="Add Jogador">
+        </form>
+
+        <div id="editForm">
+            <h3>Edit Game</h3>
+            <form action="javascript:void(0);" onsubmit="updateGame()">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-name">
+                <input type="text" id="edit-sinopse">
+                <input type="text" id="edit-plataforma">
+                <input type="text" id="edit-anolancamento">
+                <input type="submit" value="Salvar">
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+
+        <div id="editFormJogador">
+            <h3>Edit Jogador</h3>
+            <form action="javascript:void(0);" onsubmit="updateJogador()">
+                <input type="hidden" id="edit-id-jogador">
+                <input type="text" id="edit-name-jogador">
+                <input type="text" id="edit-idade-jogador">
+                <input type="text" id="edit-nome-usuario">
+                <input type="text" id="edit-nome-game">
+                <input type="submit" value="Salvar">
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+
+        <p id="counter"></p>
+
+        <br>
+        <table>
+            <h3>Games</h3>
+            <tr>
+                <th>Nome</th>
+                <th>Sinopse</th>
+                <th>Plataforma</th>
+                <th>Ano Lançamento</th>
+                <th>Qtde de Jogadores</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody id="games"></tbody>
+        </table>
+        <br><br>
+        <table>
+            <h3>Jogadores</h3>
+            <tr>
+                <th>Nome do Jogador</th>
+                <th>Idade</th>
+                <th>Nome de Usuário</th>
+                <th>Nome do Game</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody id="jogadores"></tbody>
+        </table>
+    </body>
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">getGames();</script>
+</html>
